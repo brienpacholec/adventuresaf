@@ -3,6 +3,7 @@ title: Hey There
 subtitle: Welcome to my New Website!
 author: Alexandrea Flint
 date: 2022-08-24T02:02:26.910Z
+thumbnail: /images/uploads/welcome.webp
 ---
 # Welcome
 

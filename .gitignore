@@ -7,6 +7,7 @@ dist
 .env
 .env.*
 
-
+.vscode
 yarn.lock
 package-lock.json
+.eslint*

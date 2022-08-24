@@ -5,6 +5,26 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
-  plugins: []
+  siteName: 'Adventures AF',
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'posts/**/*.md',
+        typeName: 'Posts',
+        remark: {
+          plugins: [
+            // ...local plugins
+          ]
+        }
+      }
+    },
+    {
+      use: 'gridsome-plugin-netlify-cms',
+      options: {
+        publicPath: '/admin',
+        modulePath: 'src/admin/index.js'
+      }
+    }
+  ]
 }

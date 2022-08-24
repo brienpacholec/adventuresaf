@@ -1,0 +1,41 @@
+backend:
+  name: github
+  repo: brienpacholec/adventuresaf
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+# logo_url: "static/images/logo.png"
+
+
+collections:
+  - name: "Posts"
+    label: "Posts"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: "Tags", 
+          name: "tags", 
+          widget: "select",
+          multiple: true, 
+          min: 1,
+          max: 2,
+          options: ["Hiking", "Camping", "Backpacking", "Daypacking"],
+          required: false
+        }
+      - {
+          label: "Location", 
+          name: "Location", 
+          widget: "select",
+          options: ["Alabama","Alaska","American Samoa","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Federated States of Micronesia","Florida","Georgia","Guam","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Marshall Islands","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Northern Mariana Islands","Ohio","Oklahoma","Oregon","Palau","Pennsylvania","Puerto Rico","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virgin Island","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],
+          required: false
+        }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", choose_url: true}
+
+        

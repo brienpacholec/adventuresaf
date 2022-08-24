@@ -12,5 +12,9 @@
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "netlify-cms": "^2.10.192"
+  },
+  "devDependencies": {
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.4.0"
   }
 }

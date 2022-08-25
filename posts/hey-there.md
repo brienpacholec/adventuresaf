@@ -1,11 +1,11 @@
 ---
 title: Capitol Reef
-subtitle: What a weekend out in the desert
+subtitle: A Weekend in the Desert
 author: Alexandrea Flint
 date: 2022-08-26T02:02:26.910Z
 tags:
-  - Hiking
-  - Backpacking
+  - Camping
+  - Daypacking
 Location: New York
 thumbnail: /images/uploads/reef.jpeg
 ---

@@ -4,8 +4,8 @@ subtitle: A wild weekend in the desert.
 author: Alexandrea Flint
 date: 2022-08-25T21:41:08.240Z
 tags:
-  - Backpacking
   - Daypacking
+  - Camping
 Location: Utah
 thumbnail: /images/uploads/reef.jpeg
 ---

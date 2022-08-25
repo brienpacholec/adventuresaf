@@ -1,13 +1,13 @@
 ---
-title: Hey There
-subtitle: Welcome to my New Website!
+title: Capitol Reef
+subtitle: What a weekend out in the desert
 author: Alexandrea Flint
-date: 2022-08-24T02:02:26.910Z
+date: 2022-08-26T02:02:26.910Z
 tags:
   - Hiking
   - Backpacking
 Location: New York
-thumbnail: /images/uploads/welcome.webp
+thumbnail: /images/uploads/reef.jpeg
 ---
 # Welcome
 

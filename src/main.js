@@ -2,7 +2,7 @@ import Vuetify from 'vuetify'
 
 import 'vuetify/dist/vuetify.min.css'
 import '@mdi/font/css/materialdesignicons.css'
-import 'prismjs/themes/prism.css'
+// import 'prismjs/themes/prism.css'
 
 import theme from '~/constants/theme'
 import Layout from '~/layouts/Layout.vue'

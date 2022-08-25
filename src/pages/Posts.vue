@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <div>
 
     <div v-for="post in this.$page.allPosts.edges" v-bind:key="post.node.id">
       <post-card
@@ -13,7 +13,7 @@
       ></post-card>
     </div>
 
-  </Layout>
+  </div>
 </template>
 
 <page-query>
@@ -40,15 +40,7 @@ import PostCard from '~/components/PostCard.vue'
 export default {
   components: {
     PostCard
-  },
-  created(){
-    console.log()
   }
 }
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>

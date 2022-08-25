@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height class="d-flex">
+  <v-container class="d-flex">
     <slot />
   </v-container>
 </template>

@@ -1,8 +1,6 @@
 <template>
   <v-app>
-    <g-link class="nav__link" to="/">Home</g-link>
-    <g-link class="nav__link" to="/about/">About</g-link>
-    <g-link class="nav__link" to="/posts/">Posts</g-link>
+    <navbar></navbar>
     <transition name="fade">
       <router-view />
     </transition>
@@ -19,7 +17,14 @@ query {
 </static-query>
 
 <script>
+
+import Navbar from '~/layouts/Navbar.vue'
+
 export default {
+  name: 'App',
+  components: {
+    Navbar
+  },
   metaInfo() {
     return {
       title: this.$static.metadata.siteName,

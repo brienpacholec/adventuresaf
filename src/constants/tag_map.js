@@ -1,18 +1,18 @@
 const tag_map = {
   'Hiking': {
-    'color': '#3DA35D',
+    'color': 'primary',
     'icon': 'mdi-ski-cross-country'
   },
   'Camping': {
-    'color': '#134611',
+    'color': 'secondary',
     'icon': 'mdi-tent'
   },
   'Backpacking': {
-    'color': '#4F6440',
+    'color': 'accent',
     'icon': 'mdi-bag-personal'
   },
   'Daypacking': {
-    'color': '#84894A',
+    'color': 'info',
     'icon': 'mdi-sun-clock'
   }
 }

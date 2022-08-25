@@ -2,7 +2,6 @@
   <div class="post-card">
     <v-container>
       <v-row
-        class="fill-height"
         align-content="center"
       >
         <template>
@@ -52,10 +51,7 @@
               :color="tag['color']"
               text-color="white"
             >
-              <v-avatar left>
-                <v-icon>{{tag['icon']}}</v-icon>
-              </v-avatar>
-              {{tag['name']}}
+              <v-icon>{{tag['icon']}}</v-icon>
             </v-chip>
 
           </v-card>

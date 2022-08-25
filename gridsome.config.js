@@ -6,6 +6,13 @@
 
 module.exports = {
   siteName: 'Adventures AF',
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      plugins: ['@gridsome/remark-prismjs']
+    }
+  },
   plugins: [
     {
       use: '@gridsome/source-filesystem',

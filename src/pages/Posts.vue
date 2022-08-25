@@ -2,11 +2,15 @@
   <Layout>
 
     <div v-for="post in this.$page.allPosts.edges" v-bind:key="post.node.id">
-      <p>{{post.node.title}}</p>
-      <p>{{post.node.subtitle}}</p>
-      <p>{{post.node.author}}</p>
-      <p>{{post.node.date}}</p>
-      <g-image alt="Example image" :src="post.node.thumbnail"  />
+      <post-card
+        :id="post.node.id"
+        :title="post.node.title"
+        :subtitle="post.node.subtitle"
+        :author="post.node.author"
+        :date="post.node.date"
+        :thumbnail="post.node.thumbnail"
+        :tags="post.node.tags"
+      ></post-card>
     </div>
 
   </Layout>
@@ -24,6 +28,7 @@
           content
           date
           thumbnail
+          tags
         }
       }
     }
@@ -31,9 +36,10 @@
 </page-query>
 
 <script>
+import PostCard from '~/components/PostCard.vue'
 export default {
-  metaInfo: {
-    title: 'Hello, world!'
+  components: {
+    PostCard
   },
   created(){
     console.log()

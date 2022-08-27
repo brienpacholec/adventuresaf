@@ -6,7 +6,7 @@ date: 2022-08-23T21:40:24.997Z
 tags:
   - Hiking
   - Camping
-Location: New York
+location: New York
 thumbnail: /images/uploads/welcome.webp
 ---
 # Welcome

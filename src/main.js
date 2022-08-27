@@ -7,6 +7,8 @@ import '@mdi/font/css/materialdesignicons.css'
 import theme from '~/constants/theme'
 import Layout from '~/layouts/Layout.vue'
 
+import '~/assets/styles/app.scss'
+
 export default function (Vue, { router, appOptions, head, isClient }) {
 
   // GET material icon package

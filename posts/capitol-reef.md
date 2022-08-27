@@ -6,7 +6,7 @@ date: 2022-08-25T21:41:08.240Z
 tags:
   - Daypacking
   - Camping
-Location: Utah
+location: Utah
 thumbnail: /images/uploads/reef.jpeg
 ---
 # Capitol Reef

@@ -12,6 +12,7 @@
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "netlify-cms": "^2.10.192",
+    "vue-search-select": "^2.9.5",
     "vuetify": "^2.6.9"
   },
   "devDependencies": {

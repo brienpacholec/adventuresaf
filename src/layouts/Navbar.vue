@@ -2,7 +2,7 @@
   <div class="navbar">
     <nav class="raleway">
       <v-toolbar
-        color="secondary"
+        color="dark_1"
         :elevate-on-scroll="true"
         :hide-on-scroll="false"
         class="d-flex justify-sm-center justify-start align-center"

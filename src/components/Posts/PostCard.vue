@@ -7,8 +7,9 @@
         <template>
           <v-card
             :loading="loading"
-            class="mx-auto my-12"
-            max-width="374"
+            class="ma-2"
+            width="300"
+            min-height="400"
           >
             <template slot="progress">
               <v-progress-linear
@@ -30,7 +31,7 @@
             <v-card-text>
               <div class="mt-n5 d-flex flex-column">
                 <span>{{subtitle}}</span>
-                <span>Written by: {{author}}</span>
+                <span>{{author}}, {{location}}</span>
               </div>
             </v-card-text>
             <v-card-actions class="mt-n5">
@@ -42,7 +43,7 @@
               </v-btn>
             </v-card-actions>
 
-            <v-divider class="mx-4"></v-divider>
+            <!-- <v-divider class="mx-4"></v-divider>
 
             <v-chip
               v-for="tag, index in mapped_tags"
@@ -52,7 +53,7 @@
               text-color="white"
             >
               <v-icon>{{tag['icon']}}</v-icon>
-            </v-chip>
+            </v-chip> -->
 
           </v-card>
         </template>
@@ -73,6 +74,10 @@ export default {
       default: null
     },
     date: {
+      type: String,
+      default: null
+    },
+    location: {
       type: String,
       default: null
     },

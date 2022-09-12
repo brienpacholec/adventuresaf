@@ -7,7 +7,7 @@
       @click="handleButtonClicked(name)"
     >
       <div>
-        <v-icon left dark>
+        <v-icon left dark v-if="icon">
           {{icon}}
         </v-icon>
         {{name}}
@@ -39,9 +39,13 @@ export default {
     },
     color: {
       type: String,
-      default: null
+      default: 'black'
     },
     icon: {
+      type: String,
+      default: null
+    },
+    type: {
       type: String,
       default: null
     },
@@ -53,7 +57,7 @@ export default {
   },
   methods: {
     handleButtonClicked(key){
-      this.$emit('buttonClicked', key, this.active)
+      this.$emit('buttonClicked', key, this.type, this.active)
       this.active = ! this.active
     }
   }

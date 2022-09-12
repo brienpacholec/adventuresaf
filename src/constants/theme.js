@@ -21,11 +21,16 @@ const theme = {
         // // warning: '#FFC107',
 
         //NICE
-        primary: '#006600',
+        primary: '#BFB8A6',
+        light_1: '#E1EFD2',
+        light_2: '#f5f7f3', //MAKE THIS BG TODO
+        dark_1: '#707269',
+        dark_2: '#3f453b',
+
         secondary: '#478b00',
         accent: '#5c4325',
         error: '#61b0ff',
-        info: '#ae7606',
+        info: '#ae7606'
       },
     }
   }

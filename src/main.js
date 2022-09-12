@@ -2,6 +2,7 @@ import Vuetify from 'vuetify'
 
 import 'vuetify/dist/vuetify.min.css'
 import '@mdi/font/css/materialdesignicons.css'
+import 'vue-search-select/dist/VueSearchSelect.css'
 // import 'prismjs/themes/prism.css'
 
 import theme from '~/constants/theme'

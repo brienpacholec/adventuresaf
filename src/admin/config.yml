@@ -26,7 +26,7 @@ collections:
           multiple: true, 
           min: 1,
           max: 2,
-          options: ["Hiking", "Camping", "Backpacking", "Daypacking"],
+          options: ["Hiking", "Camping", "Backpacking", "Daypacking", "National Parks"],
           required: false
         }
       - {

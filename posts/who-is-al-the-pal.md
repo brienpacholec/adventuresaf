@@ -1,6 +1,6 @@
 ---
 title: Who is Al-the-Pal?
-subtitle: ""
+subtitle: Come find out!
 author: Brien Pacholec
 date: 2022-08-28T22:21:14.509Z
 tags:

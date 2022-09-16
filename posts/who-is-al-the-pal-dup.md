@@ -6,8 +6,8 @@ date: 2022-09-16T16:19:12.279Z
 tags:
   - Backpacking
   - Camping
-location: New York
-thumbnail: /images/uploads/the-pal.webp
+location: Alaska
+thumbnail: /images/uploads/test.webp
 ---
 I'm not really sure where to start so I guess I'll start from the beginning. I'm from a small town just south of Geneseo, New York where some say there are more cows than people. As far back as I could remember, I was always playing sports whether it was organized sports or it was playing in the background with friends from the neighborhood. In high school, I was a decent three-sport athlete and traveled every weekend playing at least one or two of those sports. I continued on to play softball and soccer during my freshman year of college where I met some of my lifelong friends. Even though I decided not to return to my sophomore year as a soccer player, I continued playing softball throughout my collegiate career. After graduating from Cortland, I soon found out that I no longer knew what my purpose was. I didn't have a set career path, I didn't know where I wanted to live, I was newly single and I had lost my identity of being an athlete. Needless to say, this ultimately left me lost, confused, and experiencing a serious identity crisis.
 

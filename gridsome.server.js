@@ -37,7 +37,7 @@ module.exports = function (api) {
 
     data.allPosts.edges.forEach(({ node }) => {
       createPage({
-        path: `/posts/${node.id}/`,
+        path: `/posts/${node.id}`,
         component: 'src/templates/PostTemplate.vue',
         context: {
           postId: node.id

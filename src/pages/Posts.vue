@@ -1,57 +1,68 @@
 <template>
-  <v-row>
+  <v-container
+    fluid
+    class="posts"
+  >
+    <v-row class="mb-6">
+      <v-col cols="12" class="mt-4 py-0 px-4">
+        <lead-post
+          :author="leadPost.node.author"
+          :content="leadPost.node.content"
+          :date="leadPost.node.date"
+          :location="leadPost.node.location"
+          :subtitle="leadPost.node.subtitle"
+          :tags="leadPost.node.tags"
+          :title="leadPost.node.title"
+          :thumbnail="leadPost.node.thumbnail"
+        ></lead-post>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">
 
-    <v-col cols="1">
-      <post-navigation
-        :tags="tags"
-        :locations="locations"
-        :currentActiveFilters="activeFilters"
-        @filtersUpdated="updateFilters"
-      ></post-navigation>
-    </v-col>
+        <v-row class="justify-center text-center">
+          <v-col cols="12" md="6" sm="8">
+            <h3>Older Posts</h3>
+            <post-search-bar
+              :tags="tags"
+              :locations="locations"
+              :activeFilters="activeFilters"
+              @searchUpdated="updateSearchFilters"
+            ></post-search-bar>
+          </v-col>
+        </v-row>
 
-    <v-col cols="10">
-      <v-row class="d-flex justify-center mt-3">
-        <v-col cols="8">
-          <post-search-bar
-            :tags="tags"
-            :locations="locations"
-            :activeFilters="activeFilters"
-            @searchUpdated="updateSearchFilters"
-          ></post-search-bar>
-        </v-col>
-      </v-row>
-
-      <v-row class="d-flex justify-center mt-0">
-        <v-col cols="8">
-          <post-active-filters
-            :activeFilters="activeFilters"
-            @activeChipFilterDismissed="updateFilters"
-          >
-          </post-active-filters>
-        </v-col>
-      </v-row>
-
-      <div class="d-flex flex-wrap">
-        <post-card
-          v-for="post in activePosts" v-bind:key="post.node.id"
-          :author="post.node.author"
-          :date="post.node.date"
-          :location="post.node.location"
-          :subtitle="post.node.subtitle"
-          :tags="post.node.tags"
-          :title="post.node.title"
-          :thumbnail="post.node.thumbnail"
-        ></post-card>
-      </div>
-    </v-col>
-  </v-row>
+        <v-row class="d-flex justify-center mt-0">
+          <v-col cols="12" md="6" sm="8">
+            <post-active-filters
+              :activeFilters="activeFilters"
+              @activeChipFilterDismissed="updateFilters"
+            >
+            </post-active-filters>
+          </v-col>
+        </v-row>
+        <v-responsive content-class="d-inline-flex justify-center flex-wrap">
+          <post-card
+            v-for="post in activePosts" v-bind:key="post.node.id"
+            :id="post.node.id"
+            :author="post.node.author"
+            :date="post.node.date"
+            :location="post.node.location"
+            :subtitle="post.node.subtitle"
+            :tags="post.node.tags"
+            :title="post.node.title"
+            :thumbnail="post.node.thumbnail"
+          ></post-card>
+        </v-responsive>
+      </v-col>
+    </v-row>
+  </v-container>
 
 </template>
 
 <page-query>
   query posts{
-    allPosts{
+    allPosts(sortBy: "date", order: DESC){
       edges {
         node {
           id
@@ -70,21 +81,23 @@
 </page-query>
 
 <script>
-import tag_map from '~/constants/tag_map'
+import LeadPost from '~/components/Posts/LeadPost.vue'
 import PostActiveFilters from '~/components/Posts/PostActiveFilters.vue'
 import PostCard from '~/components/Posts/PostCard.vue'
-import PostNavigation from '~/components/Posts/PostNavigation.vue'
 import PostSearchBar from '~/components/Posts/PostSearchBar.vue'
+import tag_map from '~/constants/tag_map'
 
 export default {
   components: {
+    LeadPost,
     PostActiveFilters,
     PostCard,
-    PostNavigation,
     PostSearchBar
   },
   data: function() {
     return {
+      leadPost: null,
+      allPosts: null,
       activePosts: [],
       activeFilters: {
         'tags': [],
@@ -96,8 +109,9 @@ export default {
     }
   },
   created() {
-    this.activePosts = this.$page.allPosts.edges
-    this.activePosts.map(post => {
+    this.leadPost = this.$page.allPosts.edges[0]
+    this.allPosts = this.$page.allPosts.edges.slice(1)
+    this.allPosts.map(post => {
       if (this.locations[post.node.location]){
         this.locations[post.node.location].count++
       } else {
@@ -117,6 +131,8 @@ export default {
         }
       })
     })
+    this.activePosts = this.allPosts //init to show all
+
   },
 
   methods: {
@@ -124,11 +140,9 @@ export default {
 
       this.activeFilters = activeFilters
 
-      //TODO - REMOVE any active posts without the current tags
       this.activePosts = []
 
-      this.$page.allPosts.edges.map(post => {
-        // CHECK to see if the location is being filtered - if not then check tags
+      this.allPosts.map(post => {
         if (this.activeFilters.locations.includes(post.node.location)) {
           this.activePosts.push(post)
         } else {
@@ -140,9 +154,8 @@ export default {
         }
       })
 
-      // IF no tags are selected - show all posts
       if(this.activePosts.length === 0){
-        this.activePosts = this.$page.allPosts.edges
+        this.activePosts = this.allPosts
       }
 
     },
@@ -157,4 +170,9 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+  #posts {
+    height: 100%;
+  }
+</style>
 

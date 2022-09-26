@@ -23,7 +23,26 @@ module.exports = function (api) {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
   })
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
+  api.createPages(async ({ createPage, graphql }) => {
+    const { data } = await graphql(`{
+      allPosts{
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
+    }`)
+
+    data.allPosts.edges.forEach(({ node }) => {
+      createPage({
+        path: `/posts/${node.id}/`,
+        component: 'src/templates/PostTemplate.vue',
+        context: {
+          postId: node.id
+        }
+      })
+    })
   })
 }

@@ -1,10 +1,8 @@
 <template>
   <div class="post-navigation">
     <v-navigation-drawer
-      left
       permanent
       expand-on-hover
-      app
       class="sticky-from-top"
       color="primary"
     >
@@ -89,22 +87,22 @@ export default {
 
 <style lang="scss">
 .post-navigation {
-    height: 100%;
-    position: -webkit-sticky;
-    position: sticky;
-    width: -webkit-fill-available;
-    z-index: 10000;
+    // height: 100%;
+    // position: -webkit-sticky;
+    // position: sticky;
+    // width: -webkit-fill-available;
+    // z-index: 10000;
 
-    .sticky-from-top {
-      position: fixed;
-      top: 100px !important;
-      height: 100%;
-    }
+    // .sticky-from-top {
+    //   position: fixed;
+    //   top: 100px !important;
+    //   height: 100%;
+    // }
 
-    .v-btn__content {
-      display: flex !important;
-      justify-content: space-between !important;
-    }
+    // .v-btn__content {
+    //   display: flex !important;
+    //   justify-content: space-between !important;
+    // }
 }
 
 </style>

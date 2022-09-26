@@ -23,6 +23,7 @@
       v-bind:key="filter"
       close
       @click:close="chipDismissed(filter, 'locations')"
+      class="ma-1"
     >
       <v-avatar left>
         <v-icon>mdi-map-marker</v-icon>
